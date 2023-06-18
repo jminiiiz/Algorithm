@@ -1,4 +1,4 @@
-from datetime import datetime
-from datetime import timedelta
-d = datetime.today() + timedelta(hours=9)
-print(d.strftime('%Y-%m-%d'))
+from datetime import *
+
+date = datetime.today() + timedelta(hours=9)
+print(date.strftime('%Y-%m-%d'))
