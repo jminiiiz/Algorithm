@@ -1,6 +1,6 @@
 # [level 0] 개미 군단 - 120837 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120837) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120837?language=python3) 
 
 ### 성능 요약
 
