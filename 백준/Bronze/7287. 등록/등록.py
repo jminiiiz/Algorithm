@@ -1,2 +1,2 @@
-print('18')
-print('cooki')
+print('64')
+print('cookie1')
