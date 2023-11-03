@@ -1,10 +1,10 @@
-# [unrated] 덧셈식 출력하기 - 181947 
+# [level unrated] 덧셈식 출력하기 - 181947 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181947) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181947?language=cpp) 
 
 ### 성능 요약
 
-메모리: 7.57 MB, 시간: 10.70 ms
+메모리: 3.71 MB, 시간: 3.60 ms
 
 ### 구분
 
@@ -13,6 +13,10 @@
 ### 채점결과
 
 정확성: 100.0<br/>합계: 100.0 / 100.0
+
+### 제출 일자
+
+2023년 11월 6일 7:21:5
 
 ### 문제 설명
 
@@ -38,4 +42,4 @@
 <div class="highlight"><pre class="codehilite"><code>4 + 5 = 9
 </code></pre></div>
 
-> 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+> 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
