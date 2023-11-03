@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 int solution(int n) {
     int sum = 0;;
 	if (n & 1) {
@@ -8,7 +5,7 @@ int solution(int n) {
         return sum;
     }
     else {
-        for (int i = 0; i <= n; i = i + 2) sum += pow(i, 2);
+        for (int i = 0; i <= n; i = i + 2) sum += i * i;
         return sum;
     }
 }
