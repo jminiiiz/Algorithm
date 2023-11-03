@@ -1,10 +1,10 @@
 # [level unrated] 문자열 반복해서 출력하기 - 181950 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181950?language=cpp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181950) 
 
 ### 성능 요약
 
-메모리: 3.6 MB, 시간: 3.08 ms
+메모리: 4.14 MB, 시간: 1.55 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2023년 10월 4일 23:33:18
+2023년 11월 6일 7:8:42
 
 ### 문제 설명
 

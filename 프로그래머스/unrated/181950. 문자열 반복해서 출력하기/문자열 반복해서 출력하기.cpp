@@ -1,14 +1,11 @@
-#include <iostream>
-#include <string>
-
+#include <bits/stdc++.h>
 using namespace std;
-
-int main(void) {
-    string str;
+int main() {
+    string s;
     int n;
-    cin >> str >> n;
+    cin >> s >> n;
     for (int i = 0; i < n; i++) {
-        cout << str;
+        cout << s;
     }
     return 0;
 }
