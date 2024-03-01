@@ -2,7 +2,8 @@
 using namespace std;
 
 int main() {
-    int x, y;
-    cin >> x >> y;
-    cout << x + y;
+    int A, B;
+    cin >> A >> B;
+    cout << A + B;
+    return 0;
 }
