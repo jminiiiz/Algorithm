@@ -1,10 +1,9 @@
-#include <stdio.h>
+#include <iostream>
+using namespace std;
 
-int main()
-{
-    int x, y;
-    scanf("%d %d", &x, &y);
-    printf("%d", x*y);
-    
+int main() {
+    int A, B;
+    cin >> A >> B;
+    cout << A * B;
     return 0;
 }
