@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-    char c;
-    cin >> c;
-    cout << (int)c;
+int main(void) {
+    char a;
+    cin >> a;
+    cout << (int)a;
 }
