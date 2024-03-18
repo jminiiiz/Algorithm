@@ -1,12 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-int a[26];
-string s;
+int arr[26];
 int main() {
-    ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+    ios::sync_with_stdio(0); cin.tie(0);
+    string s;
     cin >> s;
-    for (char c : s) a[c-97]++;
-    for (int i = 0; i < 26; i++) cout << a[i] << " ";
-    return 0;
+    for (auto a : s) arr[a - 'a']++;
+    for (int i = 0; i < 26; i++) cout << arr[i] << " ";
 }
