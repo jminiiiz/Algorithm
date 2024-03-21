@@ -1,30 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-    ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+    ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
     while (true) {
-        string s;
-        getline(cin, s);
-        if (s == ".") break;
-        stack<int> stk;
-        bool check = true;
-        for (int i = 0; i < s.length(); i++) {
-            if (s[i] == ')') {
-                if (stk.size() == 0 || stk.top() == '[') {
-                    check = false;
+        string str;
+        getline(cin, str);
+        if (str == ".") break;
+        stack<char> s;
+        bool isValid = true;
+        for (auto c : str) {
+            if (c == '(' || c == '[') s.push(c);
+            else if (c == ')') {
+                if (s.empty() || s.top() != '(') {
+                    isValid = false;
                     break;
-                } else stk.pop();
+                }
+                s.pop();
             }
-            if (s[i] == ']') {
-                if (stk.size() == 0 || stk.top() == '(') {
-                    check = false;
+            else if (c == ']') {
+                if (s.empty() || s.top() != '[') {
+                    isValid = false;
                     break;
-                } else stk.pop();
+                }
+                s.pop();
             }
-            if (s[i] == '(' || s[i] == '[') stk.push(s[i]);
         }
-        if (check && stk.size() == 0) cout << "yes\n";
+        if (!s.empty()) isValid = false;
+        if (isValid) cout << "yes\n";
         else cout << "no\n";
     }
-    return 0;
 }
