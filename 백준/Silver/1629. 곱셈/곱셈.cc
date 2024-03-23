@@ -1,17 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-long long a, b, c;
-long long go(long long a, long long b) {
-    if (b == 1) return a % c;
-    long long ret = go(a, b / 2);
-    ret = (ret * ret) % c;
-    if (b % 2) ret = (ret * a) % c;
-    return ret;
+long long pow(long long a, long long b, long long m) {
+    if (b == 1) return a % m;
+    long long val = pow(a, b/2, m);
+    val = val * val % m;
+    if (b % 2 == 0) return val;
+    return val * a % m;
 }
 int main() {
-    ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+    ios::sync_with_stdio(0); cin.tie(0);
+    long long a, b, c;
     cin >> a >> b >> c;
-    cout << go(a, b) << "\n";
-    return 0;
+    cout << pow(a, b, c);
 }
