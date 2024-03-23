@@ -1,45 +1,51 @@
-#include<bits/stdc++.h>
-using namespace std; 
-int dy[4] = {-1, 0, 1, 0};
-int dx[4] = {0, 1, 0, -1}; 
-int m, n, k, y, x, ret, ny, nx, t;
-int a[51][51];
-bool visited[51][51]; 
-void dfs(int y, int x){
-    visited[y][x] = 1;
-    for(int i = 0; i < 4; i++){
-        ny = y + dy[i];
-        nx = x + dx[i];
-        if(ny < 0 || nx < 0 || ny >=n || nx >= m) continue;
-        if(a[ny][nx] == 1 && !visited[ny][nx]){
-            dfs(ny, nx);
+#include <bits/stdc++.h>
+using namespace std;
+int board[51][51];
+bool vis[51][51];
+int dx[4] = {1, 0, -1, 0};
+int dy[4] = {0, 1, 0, -1};
+int m, n, k;
+queue<pair<int, int>> q;
+void bfs(int x, int y) {
+    vis[x][y] = true;
+    q.push({x, y});
+    while (!q.empty()) {
+        auto cur = q.front(); q.pop();
+        for (int dir = 0; dir < 4; dir++) {
+            int nx = cur.first + dx[dir];
+            int ny = cur.second + dy[dir];
+            if (nx < 0 || nx >= n || ny < 0 || ny >= m) continue;
+            if (vis[nx][ny] || board[nx][ny] != 1) continue;
+            vis[nx][ny] = true;
+            q.push({nx, ny});
         }
     }
-    return;
 }
 
-int main(){ 
-    cin.tie(NULL);
-    cout.tie(NULL);
+int main() {
+    ios::sync_with_stdio(0); cin.tie(0);
+    int t;
     cin >> t;
-    while(t--){
-        fill(&a[0][0], &a[0][0] + 51 * 51, 0);
-        fill(&visited[0][0], &visited[0][0] + 51 * 51, 0);
-        ret = 0;
+    while (t--) {
         cin >> m >> n >> k;
-        for(int i = 0; i < k; i++){
+        int x, y;
+        for (int i = 0; i < k; i++) {
             cin >> x >> y;
-            a[y][x] = 1;
+            board[y][x] = 1;
         }
-        for(int i = 0; i < n; i++){
-            for(int j = 0; j < m; j++){
-                if(a[i][j] == 1 && !visited[i][j]){
-                    dfs(i, j);
-                    ret++;
+        int res = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (board[i][j] == 1 && !vis[i][j]) {
+                    bfs(i, j);
+                    res++;
                 }
             }
         }
-        cout << ret << "\n"; 
+        cout << res << "\n";
+        for (int i = 0; i < n; i++) {
+            fill(board[i], board[i] + m, 0);
+            fill(vis[i], vis[i] + m, false);
+        }
     }
-    return 0;
 }
