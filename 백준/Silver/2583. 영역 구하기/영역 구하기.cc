@@ -1,44 +1,47 @@
-#include<bits/stdc++.h> 
-using namespace std;  
-#define y1 aaaa 
-int a[104][104], m, n, k, x1, x2, y1, y2, visited[104][104];
-const int dy[4] = {-1, 0, 1, 0};
-const int dx[4] = {0, 1, 0, -1};
-vector<int> ret; 
-int dfs(int y, int x){
-    visited[y][x] = 1; 
-    int ret = 1; 
-    for(int i = 0; i < 4; i++){
-        int ny = y + dy[i]; 
-        int nx = x + dx[i]; 
-        if(ny < 0 || ny >= m || nx < 0 || nx >= n || visited[ny][nx] == 1) continue; 
-		if(a[ny][nx] == 1) continue;
-        ret += dfs(ny, nx);
-    } 
-    return ret; 
-}
-int main() { 
-    ios_base::sync_with_stdio(false);  
-    cin.tie(NULL);
-    cout.tie(NULL);
-    cin >> m >> n >> k; 
-    for(int i = 0; i < k; i++){
-        cin >> x1 >> y1 >> x2 >> y2;  
-        for(int x = x1; x < x2; x++){
-            for(int y = y1; y < y2; y++){
-                a[y][x] = 1; 
+#include <bits/stdc++.h>
+using namespace std;
+int dx[4] = { 1, 0, -1, 0 };
+int dy[4] = { 0, 1, 0, -1 };
+int m, n, k;
+int board[102][102], vis[102][102];
+int main() {
+    ios::sync_with_stdio(0); cin.tie(0);
+    cin >> m >> n >> k;
+    while (k--) {
+        int lx, ly, rx, ry;
+        cin >> lx >> ly >> rx >> ry;
+        for (int i = ly; i < ry; i++) {
+            for (int j = lx; j < rx; j++) {
+                board[i][j] = 1;
             }
         }
     }
-    for(int i = 0; i < m; i++){
-        for(int j = 0; j < n; j++){
-            if(a[i][j] != 1 & visited[i][j] == 0) { 
-                ret.push_back(dfs(i, j));
+    int cnt = 0;
+    vector<int> ans;
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            if (board[i][j] == 1 || vis[i][j] == 1) continue;
+            queue<pair<int, int>> q;
+            vis[i][j] = 1;
+            q.push({i, j});
+            int width = 1;
+            cnt++;
+            while (!q.empty()) {
+                auto cur = q.front(); q.pop();
+                for (int dir = 0; dir < 4; dir++) {
+                    int nx = cur.first + dx[dir];
+                    int ny = cur.second + dy[dir];
+                    if (nx < 0 || nx >= m || ny < 0 || ny >= n) continue;
+                    if (board[nx][ny] == 1 || vis[nx][ny] == 1) continue;
+                    q.push({nx, ny});
+                    vis[nx][ny] = 1;
+                    width++;
+                }
             }
+            ans.push_back(width);
         }
     }
-    sort(ret.begin(), ret.end());
-    cout << ret.size() << "\n";
-    for(int a : ret) cout << a << " "; 
-    return 0; 
+    sort(ans.begin(), ans.end());
+    cout << cnt << "\n";
+    for (int i : ans) cout << i << " ";
 }
