@@ -1,23 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-int N;
-string s, t, pre, suf;
+int n;
+string s, t;
 int main() {
-    cin >> N;
-    cin >> s;
+    ios::sync_with_stdio(0); cin.tie(0);
+    cin >> n >> s;
     int pos = s.find('*');
-    pre = s.substr(0, pos);
-    suf = s.substr(pos + 1);
-    for (int i = 0; i < N; i++) {
+    string pre = s.substr(0, pos);
+    string suf = s.substr(pos + 1);
+    while (n--) {
         cin >> t;
         if (pre.size() + suf.size() > t.size()) {
             cout << "NE\n";
         }
         else {
-            if (pre == t.substr(0, pre.size()) && suf == t.substr(t.size() - suf.size())) cout << "DA\n";
+            if (pre == t.substr(0, pre.size()) && suf == t.substr(t.size() - suf.size()))
+                cout << "DA\n";
             else cout << "NE\n";
         }
     }
-    return 0;
 }
