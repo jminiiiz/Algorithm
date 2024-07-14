@@ -1,21 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
-int n, s, m, l, xl, xxl, xxxl, t, p, cnt;
+int n, t, p, cnt, arr[6];
 int main() {
     ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-    cin >> n >> s >> m >> l >> xl >> xxl >> xxxl >> t >> p;
-    cnt += (s / t) + 1;
-    cnt += (m / t) + 1;
-    cnt += (l / t) + 1;
-    cnt += (xl / t) + 1;
-    cnt += (xxl / t) + 1;
-    cnt += (xxxl / t) + 1;
-    if (s % t == 0) cnt--;
-    if (m % t == 0) cnt--;
-    if (l % t == 0) cnt--;
-    if (xl % t == 0) cnt--;
-    if (xxl % t == 0) cnt--;
-    if (xxxl % t == 0) cnt--;
+    cin >> n;
+    for (int i = 0; i < 6; i++) cin >> arr[i];
+    cin >> t >> p;
+    for (int i = 0; i < 6; i++) {
+        if (arr[i] % t == 0) cnt += arr[i] / t;
+        else cnt += arr[i] / t + 1;
+    }
     cout << cnt << "\n";
     cout << n / p << " " << n % p;
 }
