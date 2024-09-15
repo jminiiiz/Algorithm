@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int A, B, C, a, b, arr[104], ret;
 int main() {
     cin >> A >> B >> C;
@@ -16,5 +15,4 @@ int main() {
         }
     }
     cout << ret;
-    return 0;
 }
