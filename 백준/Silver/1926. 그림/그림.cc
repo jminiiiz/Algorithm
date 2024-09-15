@@ -11,8 +11,8 @@ int main() {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) cin >> board[i][j];
     }
-    int mx = 0; // 그림의 최대값
-    int num = 0; // 그림의 수
+    int mx = 0; 
+    int num = 0; 
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
             if (board[i][j] == 0 || visited[i][j]) continue;
