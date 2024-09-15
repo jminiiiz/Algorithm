@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int cnt[200], flag;
 string s, ret;
 char mid;
