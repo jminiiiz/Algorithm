@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int n;
 string s;
 char a[101][101];
@@ -23,7 +22,6 @@ string quard(int y, int x, int size) {
     }
     return string(1, a[y][x]);
 }
-
 int main() {
     ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
     cin >> n;
