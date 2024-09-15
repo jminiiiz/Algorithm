@@ -4,7 +4,6 @@ int n, m;
 vector<string> notHeard;
 vector<string> notSeen;
 vector<string> ans;
-
 int main() {
     ios::sync_with_stdio(0); cin.tie(0);
     cin >> n >> m;
