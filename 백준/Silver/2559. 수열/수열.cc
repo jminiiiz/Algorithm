@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int n, k, tmp, psum[100001], ret = -1000000;
 int main() {
     ios_base::sync_with_stdio(false);
