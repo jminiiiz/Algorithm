@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 string s, tmp;
 int main() {
     cin >> s;
