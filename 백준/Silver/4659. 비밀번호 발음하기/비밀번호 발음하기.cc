@@ -5,7 +5,6 @@ int lcnt, vcnt;
 bool isVowel(int idx) {
     return (idx == 'a' || idx == 'e' || idx == 'i' || idx == 'o' || idx == 'u');
 }
-
 int main() {
     while (true) {
         cin >> s;
@@ -26,5 +25,4 @@ int main() {
         if (flag) cout << "<" << s << "> is not acceptable.\n";
         else cout << "<" << s << "> is acceptable.\n";
     }
-    return 0;
 }
