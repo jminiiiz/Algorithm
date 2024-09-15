@@ -3,14 +3,12 @@ using namespace std;
 int n, c, a[1004];
 vector<pair<int, int>> v;
 map<int, int> mp, mp_first;
-
 bool cmp(pair<int, int> a, pair<int, int> b) {
     if (a.first == b.first) {
         return mp_first[a.second] < mp_first[b.second];
     }
     return a.first > b.first;
 }
-
 int main() {
     ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
     cin >> n >> c;
@@ -27,6 +25,4 @@ int main() {
             cout << i.second << " ";
         }
     }
-
-    return 0;
 }
