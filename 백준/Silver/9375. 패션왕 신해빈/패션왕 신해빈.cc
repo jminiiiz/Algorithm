@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int t, n;
 string a, b;
 int main() {
@@ -19,5 +18,4 @@ int main() {
         ret--;
         cout << ret << "\n";
     }
-    return 0;
 }
