@@ -2,9 +2,8 @@
 #include <stdio.h>
 #include <algorithm>
 using namespace std;
-int n, m, arr[8], res[8]; //arr : 입력받은 수열, res : 길이m인 수열(출력)
-bool chk[8] = { false }; //중복확인
-
+int n, m, arr[8], res[8]; 
+bool chk[8] = { false }; 
 void func(int cnt) {
 	if (cnt == m) {
 		for (int i = 0; i < m; i++)
