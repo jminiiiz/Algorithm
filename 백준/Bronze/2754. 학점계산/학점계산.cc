@@ -1,11 +1,9 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-
 int main() {
     string s;
     double d = 0.0;
     cin >> s;
-
     switch (s[0]) {
         case 'A':
             d = 4.0;
