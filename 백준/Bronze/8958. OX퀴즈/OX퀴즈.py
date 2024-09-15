@@ -1,5 +1,4 @@
 n = int(input())
-
 for i in range(n):
     s = list(input())
     score, count = 0, 1
