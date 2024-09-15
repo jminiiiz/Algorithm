@@ -3,8 +3,6 @@
 #include <utility>
 #include <queue>
 using namespace std;
-
-
 int board[1002][1002];
 int dist[1002][1002];
 int dx[4] = { 0,0,1,-1 };
@@ -29,8 +27,7 @@ int main() {
 				dist[i][j] = 0;
 			}
 		}
-	}
-	
+	}	
 	while (!q.empty()) {
 		auto cur = q.front();
 		q.pop();
@@ -43,9 +40,7 @@ int main() {
 			dist[nx][ny] = dist[cur.first][cur.second] + 1;
 			q.push({ nx,ny });
 		}
-	}
-
-	
+	}	
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < m; j++) {
 			if (board[i][j] == 0) cout << 0 << " ";
