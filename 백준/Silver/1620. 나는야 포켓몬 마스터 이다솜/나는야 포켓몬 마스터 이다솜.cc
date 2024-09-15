@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int n, m;
 string s;
 map <string, int> mp;
