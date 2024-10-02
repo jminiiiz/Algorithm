@@ -1,15 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
-int factorial(int num) {
-    if(num == 1 || num == 0) {
-        return 1;
-    } else {
-        return factorial(num-1) * num;
-    }
-}
 int main() {
+    ios::sync_with_stdio(0); cin.tie(0);
     int n, k;
     cin >> n >> k;
-    cout << factorial(n) / (factorial(k) * factorial(n - k));
-    return 0;
+    int ret = 1;
+    for (int i = 1; i <= n; i++) ret *= i;
+    for (int i = 1; i <= k; i++) ret /= i;
+    for (int i = 1; i <= n-k; i++) ret /= i;
+    cout << ret;
 }
