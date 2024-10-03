@@ -13,10 +13,10 @@ int main() {
             two.push_back(a[i]+a[j]);
     }
     sort(two.begin(), two.end());
-    for (int i = n-1; i > 0; i--) {
-        for (int j = 0; j < i; j++) {
-            if (binary_search(two.begin(), two.end(), a[i] - a[j])) {
-                cout << a[i];
+    for (int l = n-1; l > 0; l--) {
+        for (int k = 0; k < l; k++) {
+            if (binary_search(two.begin(), two.end(), a[l] - a[k])) {
+                cout << a[l];
                 return 0;
             }
         }
