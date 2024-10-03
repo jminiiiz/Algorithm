@@ -1,12 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 int reverseNumber(int n) {
-    int res = 0;
-    while (n > 0) {
-        res = res * 10 + n % 10;
-        n /= 10;
-    }
-    return res;
+    string s = to_string(n);
+    reverse(s.begin(), s.end());
+    return stoi(s);
 }
 int main() {
     ios::sync_with_stdio(0); cin.tie(0);
