@@ -1,27 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define MAX 100001
-int n, arr[MAX];
-bool vis[MAX];
-vector<int> v[MAX];
-void dfs(int k) {
-    vis[k] = true;
-    for (int i = 0; i < v[k].size(); i++) {
-        int next = v[k][i];
-        if (!vis[next]) {
-            arr[next] = k;
-            dfs(next);
-        }
+int n;
+vector<int> adj[100001];
+int p[100001];
+void dfs(int cur) {
+    for (int nxt : adj[cur]) {
+        if (p[cur] == nxt) continue;
+        p[nxt] = cur;
+        dfs(nxt);
     }
 }
 int main() {
+    ios::sync_with_stdio(0); cin.tie(0);
     cin >> n;
-    for (int i = 1; i < n; i++) {
-        int x, y;
-        cin >> x >> y;
-        v[x].push_back(y);
-        v[y].push_back(x);
+    for (int i = 0; i < n-1; i++) {
+        int u, v; cin >> u >> v;
+        adj[u].push_back(v);
+        adj[v].push_back(u);
     }
     dfs(1);
-    for (int i = 2; i <= n; i++) cout << arr[i] << "\n";
+    for (int i = 2; i <= n; i++) cout << p[i] << '\n';
 }
