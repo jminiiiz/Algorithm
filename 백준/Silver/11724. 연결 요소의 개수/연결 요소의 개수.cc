@@ -1,37 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
 int n, m;
-int arr[1001][1001];
-bool visited[1001];
-queue<int> q;
-void bfs(int x) {
-    q.push(x);
-    visited[x] = true;
-    while (!q.empty()) {
-        x = q.front(); q.pop();
-        for (int i = 1; i <= n; i++) {
-            if (arr[x][i] == 1 && visited[i] == false) {
-                q.push(i);
-                visited[i] = true;
-            }
-        }
-    }
-}
+vector<int> adj[1005];
+bool vis[1005];
 int main() {
     ios::sync_with_stdio(0); cin.tie(0);
     cin >> n >> m;
-    for (int i = 0; i < m; i++) {
-        int x, y;
-        cin >> x >> y;
-        arr[x][y] = true;
-        arr[y][x] = true;
+    while (m--) {
+        int u, v;
+        cin >> u >> v;
+        adj[u].push_back(v);
+        adj[v].push_back(u);
     }
-    int cnt = 0;
+    int num = 0;
     for (int i = 1; i <= n; i++) {
-        if (visited[i] == 0) {
-            bfs(i);
-            cnt++;
+        if (vis[i]) continue;
+        num++;
+        queue<int> q;
+        q.push(i);
+        vis[i] = true;
+        while (!q.empty()) {
+            int cur = q.front(); q.pop();
+            for (auto nxt : adj[cur]) {
+                if (vis[nxt]) continue;
+                q.push(nxt);
+                vis[nxt] = true;
+            }
         }
     }
-    cout << cnt << '\n';
+    cout << num;
 }
