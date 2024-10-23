@@ -7,12 +7,10 @@ int main() {
     cin >> n >> s;
     int pos = s.find('*');
     string pre = s.substr(0, pos);
-    string suf = s.substr(pos + 1);
+    string suf = s.substr(pos+1);
     while (n--) {
         cin >> t;
-        if (pre.size() + suf.size() > t.size()) {
-            cout << "NE\n";
-        }
+        if (pre.size() + suf.size() > t.size()) cout << "NE\n";
         else {
             if (pre == t.substr(0, pre.size()) && suf == t.substr(t.size() - suf.size()))
                 cout << "DA\n";
