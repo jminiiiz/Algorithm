@@ -1,24 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
-int n, m, j, l, r, tmp, ret;
+int n, m, j, k, cnt;
 int main() {
+    ios::sync_with_stdio(0); cin.tie(0);
     cin >> n >> m >> j;
-    l = 1;
-    for (int i = 0; i < j; i++) {
-        r = l + m - 1;
-        cin >> tmp;
-        if (tmp >= l && tmp <= r) continue;
+    int l = 1;
+    while (j--) {
+        int r = l + m - 1;
+        cin >> k;
+        if (k >= l && k <= r) continue;
         else {
-            if (tmp < l) {
-                ret += (l - tmp);
-                l = tmp;
-            }
-            else {
-                l += (tmp - r);
-                ret += (tmp - r);
+            if (k < l) {
+                cnt += l - k;
+                l = k;
+            } else {
+                l += k - r;
+                cnt += k - r;
             }
         }
     }
-    cout << ret << "\n";
-    return 0;
+    cout << cnt;
 }
