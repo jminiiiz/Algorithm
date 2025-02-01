@@ -1,20 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
-int n, c, a[1004];
+int n, c, arr[1004];
 vector<pair<int, int>> v;
-map<int, int> mp, mp_first;
-bool cmp(pair<int, int> a, pair<int, int> b) {
-    if (a.first == b.first) {
-        return mp_first[a.second] < mp_first[b.second];
+map<int, int> mp, mp2;
+bool cmp(pair<int, int> x, pair<int, int> y) {
+    if (x.first == y.first) {
+        return mp2[x.second] < mp2[y.second];
     }
-    return a.first > b.first;
+    return x.first > y.first;
 }
 int main() {
-    ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+    ios::sync_with_stdio(0); cin.tie(0);
     cin >> n >> c;
     for (int i = 0; i < n; i++) {
-        cin >> a[i]; mp[a[i]]++;
-        if(mp_first[a[i]] == 0) mp_first[a[i]] = i + 1;
+        cin >> arr[i]; mp[arr[i]]++;
+        if (mp2[arr[i]] == 0) mp2[arr[i]] = i + 1;
     }
     for (auto it : mp) {
         v.push_back({it.second, it.first});
