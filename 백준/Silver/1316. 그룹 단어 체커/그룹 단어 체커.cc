@@ -1,28 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 int n, res;
-vector<string> v;
-bool isGroupWord(string s) {
-    bool visited[26] = {0};
-    char prev = 0;
-    for (char c : s) {
-        if (prev != c) {
-            if (visited[c - 'a']) return false;
-            visited[c - 'a'] = true;
+string s;
+bool isGroupWord(const string& s) {
+    bool visited[26] = {false};
+    for (int i = 0; i < s.size(); i++) {
+        if (i > 0 && s[i] != s[i - 1] && visited[s[i] - 'a']) {
+            return false;
         }
-        prev = c;
+        visited[s[i] - 'a'] = true;
     }
     return true;
 }
 int main() {
     ios::sync_with_stdio(0); cin.tie(0);
     cin >> n;
-    v.resize(n);
-    for (int i = 0; i < n; i++) {
-        cin >> v[i];
-    }
-    for (string s : v) {
-        if (isGroupWord(s)) res++;
+    while (n--) {
+        cin >> s;
+        res += isGroupWord(s);
     }
     cout << res;
 }
